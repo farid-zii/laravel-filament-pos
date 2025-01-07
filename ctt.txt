@@ -1,0 +1,9 @@
+composer require filament/filament -W
+
+php artisan filament:install --panels
+
+ /// DATA PROVINSI DI INDO
+curl -o "database/seeders/data/laravel_pos_districts.sql" "https://raw.githubusercontent.com/CahBantul/laravel-pos/develop/database/seeders/data/laravel_pos_districts.sql"
+curl -o "database/seeders/data/laravel_pos_provinces.sql" "https://raw.githubusercontent.com/CahBantul/laravel-pos/develop/database/seeders/data/laravel_pos_provinces.sql"
+curl -o "database/seeders/data/laravel_pos_regencies.sql" "https://raw.githubusercontent.com/CahBantul/laravel-pos/develop/database/seeders/data/laravel_pos_regencies.sql"
+curl -o "database/seeders/data/laravel_pos_villages.sql" "https://raw.githubusercontent.com/CahBantul/laravel-pos/develop/database/seeders/data/laravel_pos_villages.sql"
