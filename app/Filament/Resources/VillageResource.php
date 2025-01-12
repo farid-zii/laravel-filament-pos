@@ -7,6 +7,7 @@ use App\Filament\Resources\VillageResource\RelationManagers;
 use App\Models\Village;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Forms\Get;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -28,6 +29,11 @@ class VillageResource extends Resource
                     ->relationship('district', 'name')
                     ->required(),
                 Forms\Components\TextInput::make('name')
+                    ->rule(function(Get $get, $record){
+                        $recordId = $record?->id;
+                        $districtId = $get('district_id');
+                        return "unique:villages,name,{$recordId},id,district_id,{$districtId}";
+                    })
                     ->required()
                     ->maxLength(50),
             ]);

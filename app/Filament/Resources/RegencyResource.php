@@ -31,7 +31,7 @@ class RegencyResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->rule(function(Get $get, $record){
                         $recordId = $record?->id;
-                        $provinceId = $get('privince_id');
+                        $provinceId = $get('province_id');
                         return "unique:regencies,name,{$recordId},id,province_id,{$provinceId}";
                     })
                     ->required()
