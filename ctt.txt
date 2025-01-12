@@ -26,10 +26,17 @@ curl -o "database/seeders/data/laravel_pos_regencies.sql" "https://raw.githubuse
 curl -o "database/seeders/data/laravel_pos_villages.sql" "https://raw.githubusercontent.com/CahBantul/laravel-pos/develop/database/seeders/data/laravel_pos_villages.sql"
 
 
-2025-01-07 09:08:04|FORWARD_REG_PHEUTURE|http://51.68.207.190/indo_airpay/gf/mo.php?msisdn=SHDC-IihCr8WQwJKuzeFsGsa62XNL9qzKnSDSJd0fA5L64vs&id_service=2323&operator=54&sms=REG+GAMIC+PTR+token%3Dgtgvk2uv81zzjfiy9ujl&trx_id=SHDC-IihCr8WQwJKuzeFsGsa62XNL9qzKnSDSJd0fA5L64vs173621568281753537&service_type=2&sdc=95799&trx_date=20250107090803&trx_partner=121-1736215667677c8c73b019f19537 | RESPONSE : <br>OK |  Resp Time : 0.71797013282776 sec,
+//ADD LIBRARY PERMISSION
+composer require bezhansalleh/filament-shield:3.2
+php artisan vendor:publish --tag="filament-shield-config"
+*Note --> Jangan lupa menambahkan use HasRole di user
+php artisan shield:install
+*tambahkan ini code dibawah ke adminPanelProvider
+->plugins([
+    \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
+])
+php artisan shield:install admin
 
-
-2025-01-07 09:08:12|DRUPDATE_PHEUTURE|TRANS: 2025-01-07 09:08:03 | http://51.68.207.190/indo_airpay/gf/dn.php?msisdn=SHDC-IihCr8WQwJKuzeFsGsa62XNL9qzKnSDSJd0fA5L64vs&trx_id=SHDC-IihCr8WQwJKuzeFsGsa62XNL9qzKnSDSJd0fA5L64vs173621568359261316&status=SUCCESS&operator=54&status_code=1&sdc=95799&id_service=2323&trx_date=20250107090811 | RESPONSE : OK |  Resp Time : 0.52918696403503 sec,
 
 
 
