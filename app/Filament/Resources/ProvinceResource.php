@@ -16,16 +16,14 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class ProvinceResource extends Resource
 {
     protected static ?string $model = Province::class;
-    protected static ?int $navigationSort =1;
-    protected static ?string $navigationGroup = "Location Management";
-    protected static ?string $navigationIcon = 'heroicon-o-building-office-2';
+
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
-                    ->unique(ignoreRecord:true)
                     ->required()
                     ->maxLength(255),
             ]);

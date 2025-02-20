@@ -15,10 +15,6 @@ php artisan make:model Regency -ms
 php artisan make:model District -ms
 php artisan make:model Village -ms
 
-
-
-
-
  /// DATA PROVINSI DI INDO
 curl -o "database/seeders/data/laravel_pos_districts.sql" "https://raw.githubusercontent.com/CahBantul/laravel-pos/develop/database/seeders/data/laravel_pos_districts.sql"
 curl -o "database/seeders/data/laravel_pos_provinces.sql" "https://raw.githubusercontent.com/CahBantul/laravel-pos/develop/database/seeders/data/laravel_pos_provinces.sql"
@@ -31,11 +27,15 @@ composer require bezhansalleh/filament-shield:3.2
 php artisan vendor:publish --tag="filament-shield-config"
 *Note --> Jangan lupa menambahkan use HasRole di user
 php artisan shield:install
+
 *tambahkan ini code dibawah ke adminPanelProvider
 ->plugins([
     \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
 ])
+
 php artisan shield:install admin
+
+
 
 
 
